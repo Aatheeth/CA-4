@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ICST University</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #FAF9F6;
+      color: #2C3E50;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 1rem;
+    }
+    .section-padding {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    .primary-btn {
+      background-color: #F39C12;
+      color: white;
+      border: none;
+    }
+    .primary-btn:hover {
+      background-color: #E67E22;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(243, 156, 18, 0.4);
+    }
+    .primary-btn:active {
+      background-color: #D35400;
+      transform: translateY(0);
+      box-shadow: 0 2px 10px rgba(243, 156, 18, 0.2);
+    }
+    .secondary-btn {
+      background-color: #FAF9F6;
+      color: #2C3E50;
+      border: 1px solid #E67E22;
+    }
+    .secondary-btn:hover {
+      background-color: #F39C12;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(243, 156, 18, 0.6);
+    }
+    .secondary-btn:active {
+      background-color: #E67E22;
+      color: white;
+      transform: translateY(0);
+      box-shadow: 0 2px 10px rgba(243, 156, 18, 0.4);
+    }
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    .hero-text-animated > * {
+      animation: fadeInUp 1s ease-out forwards;
+      opacity: 0;
+    }
+    .hero-text-animated h2 { animation-delay: 0.2s; }
+    .hero-text-animated p { animation-delay: 0.4s; }
+    .hero-text-animated .btn { animation-delay: 0.6s; }
+    .hero-section {
+      background-image: url('ics.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(44, 62, 80, 0.6);
+      z-index: 1;
+    }
+    .hero-section > .container {
+      position: relative;
+      z-index: 2;
+    }
+    .about-section, .application-section, .contact-section { background-color: #FAF9F6; }
+    .purpose-section, .facilities-section, .location-section { background-color: #F8F8F8; }
+    .programs-section { background-color: #FAF9F6; }
+    .admissions-section, .footer-section { background-color: #2C3E50; }
+    .text-gray-900 { color: #2C3E50; }
+    .text-gray-700 { color: #556270; }
+    .text-white { color: white; }
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .animate-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .program-pop {
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .program-pop:hover {
+      transform: scale(1.08) translateY(-10px);
+      box-shadow: 0 12px 32px rgba(243, 156, 18, 0.18), 0 2px 8px rgba(44,62,80,0.10);
+      z-index: 2;
+    }
+x  </style>
+</head>
+<body class="antialiased">
+
+  <header class="bg-FAF9F6 shadow-md py-4 sticky top-0 z-50">
+    <div class="container flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <img src="logo.png" alt="ICST University Logo" class="h-40 w-400 object-contain" style="margin-right: 0.75rem;" />
+        <h1 class="text-3xl font-bold text-2C3E50">
+          
+        </h1>
+      </div>
+      <nav>
+        <ul class="flex space-x-6">
+          <li><a href="#about" class="hover:text-E67E22 font-semibold transition-all duration-300 hover:scale-105">About Us</a></li>
+          <li><a href="#purpose" class="hover:text-E67E22 font-semibold transition-all duration-300 hover:scale-105">Our Purpose</a></li>
+          <li><a href="#facilities" class="hover:text-E67E22 font-semibold transition-all duration-300 hover:scale-105">Facilities</a></li>
+          <li><a href="#programs" class="hover:text-E67E22 font-semibold transition-all duration-300 hover:scale-105">Programs</a></li>
+          <li><a href="#admissions" class="hover:text-E67E22 font-semibold transition-all duration-300 hover:scale-105">Admissions</a></li>
+          <li><a href="#application" class="hover:text-E67E22 font-semibold transition-all duration-300 hover:scale-105">Application</a></li>
+          <li><a href="#location" class="hover:text-E67E22 font-semibold transition-all duration-300 hover:scale-105">Location</a></li>
+          <li><a href="#contact" class="hover:text-E67E22 font-semibold transition-all duration-300 hover:scale-105">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero-section text-white py-24 md:py-32 rounded-b-3xl shadow-xl flex items-center justify-center">
+    <div class="container flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+      <div class="max-w-xl text-center md:text-left hero-text-animated">
+        <h2 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Empowering Futures Through Innovation and Knowledge.</h2>
+        <p class="text-lg md:text-xl font-light mb-10 opacity-90">Discover a world-class education at ICST University, where excellence meets opportunity.</p>
+        <a href="#programs" class="btn primary-btn text-lg px-8 py-3">Explore Programs</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about-section section-padding animate-on-scroll">
+    <div class="container text-center">
+      <h3 class="text-3xl md:text-4xl font-bold mb-6">About ICST University</h3>
+      <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-4">ICST University is dedicated to fostering academic excellence, groundbreaking research, and community engagement. We provide a dynamic learning environment that prepares students to become leaders and innovators in a rapidly changing world.</p>
+    </div>
+  </section>
+
+  <section id="purpose" class="purpose-section section-padding animate-on-scroll">
+    <div class="container text-center">
+      <h3 class="text-3xl md:text-4xl font-bold mb-6">Our Purpose</h3>
+      <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-4">At ICST University, our core purpose is to cultivate a learning ecosystem that inspires critical thinking, fosters innovation, and promotes ethical leadership.</p>
+    </div>
+  </section>
+
+  <section id="facilities" class="facilities-section section-padding animate-on-scroll">
+    <div class="container text-center">
+      <h3 class="text-3xl md:text-4xl font-bold mb-12">Our Facilities</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div class="bg-red-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+          <img src="mod.jpeg" alt="Modern Classrooms" class="w-full h-40 object-cover rounded-lg mb-4" />
+          <h4 class="text-xl font-bold mb-2 text-red-600">Modern Classrooms</h4>
+          <p class="text-gray-700">Equipped with the latest technology for interactive and engaging learning experiences.</p>
+        </div>
+        <div class="bg-red-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+          <img src="lab.jpg" alt="Advanced Labs" class="w-full h-40 object-cover rounded-lg mb-4" />
+          <h4 class="text-xl font-bold mb-2 text-red-600">Advanced Labs</h4>
+          <p class="text-gray-700">Hands-on experience in state-of-the-art laboratories.</p>
+        </div>
+        <div class="bg-red-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+          <img src="libr.jpg" alt="Comprehensive Library" class="w-full h-40 object-cover rounded-lg mb-4" />
+          <h4 class="text-xl font-bold mb-2 text-red-600">Comprehensive Library</h4>
+          <p class="text-gray-700">A vast collection of academic resources and quiet study spaces.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="programs" class="programs-section section-padding animate-on-scroll">
+    <div class="container text-center">
+      <h3 class="text-3xl md:text-4xl font-bold mb-12">Our Academic Programs</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div class="bg-FAF9F6 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 program-pop flex flex-col items-center">
+          <h4 class="text-xl font-bold mb-2 text-red-600">HDIT</h4>
+          <p class="text-gray-700">Higher Diploma in Information Technology.</p>
+          <img src="hdit.jpg" alt="HDIT" class="w-full h-32 object-cover rounded-lg my-4" />
+          <span class="block w-32 h-2 bg-red-600 rounded-full mt-4"></span>
+        </div>
+        <div class="bg-FAF9F6 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 program-pop flex flex-col items-center">
+          <h4 class="text-xl font-bold mb-2 text-red-600">BAIT</h4>
+          <p class="text-gray-700">Bachelor of Arts in Information Technology.</p>
+          <img src="bait.jpg" alt="BAIT" class="w-full h-32 object-cover rounded-lg my-4" />
+          <span class="block w-32 h-2 bg-red-600 rounded-full mt-4"></span>
+        </div>
+        <div class="bg-FAF9F6 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 program-pop flex flex-col items-center">
+          <h4 class="text-xl font-bold mb-2 text-red-600">ACCA</h4>
+          <p class="text-gray-700">Association of Chartered Certified Accountants program.</p>
+          <img src="acca.jpg" alt="ACCA" class="w-full h-32 object-cover rounded-lg my-4" />
+          <span class="block w-32 h-2 bg-red-600 rounded-full mt-4"></span>
+        </div>
+        <div class="bg-FAF9F6 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 program-pop flex flex-col items-center">
+          <h4 class="text-xl font-bold mb-2 text-red-600">Quantity Surveying (QS)</h4>
+          <p class="text-gray-700">Specialized program in construction cost management and project economics.</p>
+          <img src="qs.jpg" alt="Quantity Surveying (QS)" class="w-full h-32 object-cover rounded-lg my-4" />
+          <span class="block w-32 h-2 bg-red-600 rounded-full mt-4"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="admissions" class="admissions-section section-padding text-white text-center animate-on-scroll">
+    <div class="container">
+      <h3 class="text-3xl md:text-4xl font-bold mb-6">Ready to Join?</h3>
+      <p class="text-lg mb-8">Start your application today and take the first step towards a brighter future.</p>
+      <a href="#application" class="btn secondary-btn px-8 py-3">Apply Now</a>
+    </div>
+  </section>
+
+  <section id="application" class="application-section section-padding animate-on-scroll">
+    <div class="container text-center">
+      <h3 class="text-3xl md:text-4xl font-bold mb-8">Application Form</h3>
+      <form class="max-w-xl mx-auto">
+        <input type="text" placeholder="Full Name" class="block w-full px-4 py-3 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400">
+        <input type="email" placeholder="Email" class="block w-full px-4 py-3 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400">
+        <textarea placeholder="Tell us about yourself" rows="5" class="block w-full px-4 py-3 mb-6 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"></textarea>
+        <button type="submit" class="btn primary-btn w-full md:w-auto px-8 py-3">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="location" class="location-section section-padding animate-on-scroll">
+    <div class="container text-center">
+      <h3 class="text-3xl md:text-4xl font-bold mb-8">Our Location</h3>
+      <p class="text-lg text-gray-700 mb-8">123 University Drive, Knowledge City, Colombo, Sri Lanka.</p>
+      
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section section-padding animate-on-scroll">
+    <div class="container text-center">
+      <h3 class="text-3xl md:text-4xl font-bold mb-8">Contact Us</h3>
+      <form class="max-w-xl mx-auto">
+        <input type="text" placeholder="Your Name" class="block w-full px-4 py-3 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400">
+        <input type="email" placeholder="Your Email" class="block w-full px-4 py-3 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400">
+        <textarea placeholder="Your Message" rows="5" class="block w-full px-4 py-3 mb-6 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"></textarea>
+        <button type="submit" class="btn primary-btn w-full md:w-auto px-8 py-3">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer-section text-white py-8 text-center">
+    <div class="container">
+      <p>© 2025 ICST University. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const animateElements = document.querySelectorAll('.animate-on-scroll');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      }, { threshold: 0.1 });
+      animateElements.forEach(el => observer.observe(el));
+    });
+  </script>
+
+</body>
+</html>
